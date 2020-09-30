@@ -30,6 +30,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @class GCDWebUploader;
+@class GCDWebServerMultiPartFormRequest; // skrew
 
 /**
  *  Delegate methods for GCDWebUploader.
@@ -195,6 +196,11 @@ NS_ASSUME_NONNULL_BEGIN
  *  The default implementation returns YES.
  */
 - (BOOL)shouldCreateDirectoryAtPath:(NSString*)path;
+
+//skrew: need it sinon ca compile pas
+- (GCDWebServerResponse*)uploadFile:(GCDWebServerMultiPartFormRequest*)request;
+- (GCDWebServerResponse*)downloadFile:(GCDWebServerRequest*)request;
+//skrew: end
 
 @end
 
